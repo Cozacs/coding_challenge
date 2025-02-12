@@ -56,13 +56,13 @@ Build a simple REST API that retrieves information about a person based on their
 
 ## Submission
 
-1. Create a public GitHub repository
+1. Create a new branch on the repo using your first and last names (e.g. `jiyunhyo`)
 2. Include a README.md with:
    - Setup instructions
    - API documentation
    - Any assumptions made
    - Future improvements (if any)
-3. Send us the repository link
+3. Send us the repository link or the repo name
 
 ## Evaluation Criteria
 
