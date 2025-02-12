@@ -62,7 +62,7 @@ Build a simple REST API that retrieves information about a person based on their
    - API documentation
    - Any assumptions made
    - Future improvements (if any)
-3. Send us the repository link or the repo name
+3. Fill out the Google form (https://forms.gle/FfsxpDzw5GjvAGNBA)
 
 ## Evaluation Criteria
 
