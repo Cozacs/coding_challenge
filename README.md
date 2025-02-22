@@ -1,83 +1,73 @@
-# Fluence Backend Developer Challenge
+# REST API - Person Info  
 
-## Overview
+Simple API to add and search persons info based on name and company.
 
-Build a simple REST API that retrieves information about a person based on their name and company.
+## 🚀 Technologies  
+- Python 3  
+- Flask  
+- SQLAlchemy (ORM)  
+- SQLite (banco de dados)  
+- Pytest (testes automatizados)  
 
-## Timeline
+## 📌 How to install and run 
 
-- Time to complete: 3-4 hours
-- Submission deadline: Within 5 days of receiving the challenge
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/Cozacs/coding_challenge
+cd rest-api-person-info
 
-## Requirements
+### 2️⃣ Create and activate your virtual development
 
-### Technical Requirements
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate      # Windows
 
-1. Create a REST API endpoint:
+### 3️⃣ Install dependencies
 
-   - POST `/person-info`
-   - Accept JSON input
-   - Return JSON response
+pip install -r requirements.txt
 
-2. Input Format:
+### 4️⃣ Create Database
 
-   ```json
-   {
-     "name": "John Doe",
-     "company": "Google" // optional
-   }
-   ```
+python -c "from app import db; db.create_all()"
 
-3. Output Format:
-   ```json
-   {
-     "name": "John Doe",
-     "current_role": "Software Engineer",
-     "company": "Google",
-     "location": "San Francisco, CA",
-     "linkedin_url": "https://linkedin.com/in/johndoe"
-   }
-   ```
+### 5️⃣ Run Server
 
-### Must Have
+python run.py
+API will run at door http://127.0.0.1:5000/
 
-- Python web framework (Flask/FastAPI/Sanic)
-- Basic error handling
-- README with setup instructions
-- Requirements.txt file
-- Basic input validation
+## 🛠 Endpoints da API
 
-### Nice to Have
+### 1️⃣ Add person to Database
 
-- Type hints
-- API documentation
-- Unit tests
-- Docker setup
+method[POST]
 
-## Submission
+JSON example
+{
+  "name": "John Doe",
+  "current_role": "Software Engineer",
+  "company": "Google",
+  "location": "San Francisco, CA",
+  "linkedin_url": "https://linkedin.com/in/johndoe"
+}
 
-1. Create a new branch on the repo using your first and last names (e.g. `jiyunhyo`)
-2. Include a README.md with:
-   - Setup instructions
-   - API documentation
-   - Any assumptions made
-   - Future improvements (if any)
-3. Fill out the Google form (https://forms.gle/FfsxpDzw5GjvAGNBA)
+Expected answer
+Code[201]
+{
+  "message": "Person add to Database!"
+}
 
-## Evaluation Criteria
+### 2️⃣ Search person
 
-- Working API endpoint (40%)
-- Code organization (20%)
-- Error handling (20%)
-- Documentation (20%)
+method[GET]
 
-## Notes
+Request example
+/person-info?name=John%20Doe&company=Google
 
-- Feel free to use any public APIs or libraries
-- Focus on code quality over quantity
-- Don't worry about authentication
-- Keep it simple and clean
-
-## Questions?
-
-If you have any questions, feel free to reach out to jiyun@tryfluence.tech
+Expected answer
+{
+  "name": "John Doe",
+  "current_role": "Software Engineer",
+  "company": "Google",
+  "location": "San Francisco, CA",
+  "linkedin_url": "https://linkedin.com/in/johndoe"
+}
