@@ -64,6 +64,7 @@ Request example
 /person-info?name=John%20Doe&company=Google
 
 Expected answer
+Code[200]
 {
   "name": "John Doe",
   "current_role": "Software Engineer",
